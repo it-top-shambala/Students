@@ -50,4 +50,16 @@ void DeleteSubject(string studentName, string subject){
 void DeleteStudent(Students,string name){
     _students.erase(name);
 }
+void DeleteMarkToValue(Students students, string name,string subject,int deletedMark){
+    for (auto item:students) {
+        for (auto item:item.second) {
+            for (vector<string>::reverse_iterator i=item.second.rend(); i<item.second.rbegin(); i++) {
+                if(*i==to_string(deletedMark)){
+                    i->erase(1);
+                    break;
+                }
 
+            }
+        }
+    }
+}
