@@ -44,3 +44,10 @@ void InsertMarks(string student_name, string subject_name, Marks marks) {
         _students[student_name][subject_name].push_back(mark);
     }
 }
+void DeleteSubject(string studentName, string subject){
+    _students[studentName].erase(subject);
+}
+void DeleteStudent(Students,string name){
+    _students.erase(name);
+}
+
