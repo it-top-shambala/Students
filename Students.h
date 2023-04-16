@@ -47,7 +47,7 @@ void InsertMarks(string student_name, string subject_name, Marks marks) {
 void DeleteSubject(string studentName, string subject){
     _students[studentName].erase(subject);
 }
-void DeleteStudent(Students,string name){
+void DeleteStudent(string name){
     _students.erase(name);
 }
 void DeleteMarkToValue(Students students, string name,string subject,int deletedMark){
