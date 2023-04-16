@@ -1,0 +1,10 @@
+Ivanov Math: 5 3 4 2
+      -Phisics: 5 5 5 5 5
+      -Chemical: 3 3 3 3
+Petrov -Programing: 5 4 3 5
+       -Math: 5 3 5 4
+       -Phisics: 5 5 5 5 5
+        -Chemical: 5 5 5 5
+Pushkin -Russian language: 5 5 5 5
+        -French language: 5 5 5 5
+        -Shoting:2 2 

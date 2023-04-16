@@ -36,11 +36,42 @@ void InsertSubject(string student_name, string subject_name) {
     Marks temp;
     _students[student_name].insert(Subject(subject_name, temp));
 }
-void InsertMark(string student_name, string subject_name, Mark mark) {
-    _students[student_name][subject_name].push_back(mark);
+void InsertMark(Students students, string student_name, string subject_name, int mark) {
+    students[student_name][subject_name].push_back(to_string(mark));
 }
-void InsertMarks(string student_name, string subject_name, Marks marks) {
+void InsertMarks(string student_name, string subject_name,Marks marks) {
     for (Mark mark : marks) {
         _students[student_name][subject_name].push_back(mark);
     }
 }
+void DeleteSubject(string studentName, string subject){
+    _students[studentName].erase(subject);
+}
+void DeleteStudent(string name){
+    _students.erase(name);
+}
+void DeleteMarkForValue1(Students students, string name,string subject,int deletedMark){
+    for (auto item:students) {
+        if (item.first==name);
+        for (auto item:item.second) {
+            if (item.first==subject)
+            for (vector<string>::reverse_iterator i=item.second.rend(); i<item.second.rbegin(); i++) {
+                if(*i==to_string(deletedMark)){
+                    i->erase(1);
+                    break;
+                }
+
+            }
+        }
+
+    }
+}
+void DeleteMarkForIndex(Students students,string name, string subject, int deletedIndex){
+    for (auto item:students) {
+        for (auto item:item.second) {
+            students[name][subject].erase(item.second.begin()+deletedIndex);
+        }
+    }
+}
+
+

@@ -31,8 +31,20 @@ void PrintStudent(Student student) {
     PrintSubjects(student.second);
 }
 
-void PrintStudents() {
+void PrintStudents(Students students) {
     for (Student student : _students) {
         PrintStudent(student);
+    }
+}
+void ShowStudents(Students students){
+    for (auto item:students) {
+        cout<<item.first<<" ";
+        for (auto item:item.second) {
+            cout<<item.first<<":";
+            for (auto item:item.second ) {
+                cout<<item<<" ";
+            }
+        }
+        cout<<endl;
     }
 }
