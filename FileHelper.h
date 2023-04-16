@@ -17,9 +17,6 @@ using Subject = pair<string, Marks>;
 using Students = map<string, Subjects>;
 using Student = pair<string, Subjects>;
 
-map <string,map<string,vector<string>>>ImortToFile(string path){
-
-}
 Students ImportFromFile1(string path){
     Students result;
     ifstream file;
@@ -86,7 +83,7 @@ void ExportToFile(string path,Students students){
         for (auto item:item.second) {
             file<<item.first<<":";
             for (auto item:item.second ) {
-                file<<item<<", ";
+                file<<item<<" ";
             }
         }
         file<<endl;
