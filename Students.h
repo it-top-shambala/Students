@@ -36,10 +36,10 @@ void InsertSubject(string student_name, string subject_name) {
     Marks temp;
     _students[student_name].insert(Subject(subject_name, temp));
 }
-void InsertMark(string student_name, string subject_name, Mark mark) {
-    _students[student_name][subject_name].push_back(mark);
+void InsertMark(Students students, string student_name, string subject_name, int mark) {
+    students[student_name][subject_name].push_back(to_string(mark));
 }
-void InsertMarks(string student_name, string subject_name, Marks marks) {
+void InsertMarks(string student_name, string subject_name,Marks marks) {
     for (Mark mark : marks) {
         _students[student_name][subject_name].push_back(mark);
     }
