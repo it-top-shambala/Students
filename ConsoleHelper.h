@@ -36,3 +36,13 @@ void PrintStudents() {
         PrintStudent(student);
     }
 }
+
+void PrintListStudents()
+{
+    map<string, map<string, vector<string>>>::iterator it_student;
+    for (it_student = _students.begin(); it_student != _students.end(); ++it_student)
+    {
+
+        cout << (*it_student).first << endl;
+    }
+}
