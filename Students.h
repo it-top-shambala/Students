@@ -50,7 +50,7 @@ void DeleteSubject(string studentName, string subject){
 void DeleteStudent(string name){
     _students.erase(name);
 }
-void DeleteMarkToValue(Students students, string name,string subject,int deletedMark){
+void DeleteMarkForValue1(Students students, string name,string subject,int deletedMark){
     for (auto item:students) {
         if (item.first==name);
         for (auto item:item.second) {
@@ -66,3 +66,12 @@ void DeleteMarkToValue(Students students, string name,string subject,int deleted
 
     }
 }
+void DeleteMarkForIndex(Students students,string name, string subject, int deletedIndex){
+    for (auto item:students) {
+        for (auto item:item.second) {
+            students[name][subject].erase(item.second.begin()+deletedIndex);
+        }
+    }
+}
+
+
