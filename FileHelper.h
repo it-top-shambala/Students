@@ -76,4 +76,19 @@ Students ImportFromFile2(string path,string Parser(string& str,char findedChar))
     file.close();
     return result;
 }
-void ExportToFile()
+void ExportToFile(string path,Students students){
+    ofstream file;
+    file.open(path);
+    if (!file.is_open())
+        cerr<<"Error"<<endl;
+    for (auto item:students) {
+        file<<item.first<<" ";
+        for (auto item:item.second) {
+            file<<item.first<<":";
+            for (auto item:item.second ) {
+                file<<item<<", ";
+            }
+        }
+        file<<endl;
+    }
+}
