@@ -52,7 +52,9 @@ void DeleteStudent(string name){
 }
 void DeleteMarkToValue(Students students, string name,string subject,int deletedMark){
     for (auto item:students) {
+        if (item.first==name);
         for (auto item:item.second) {
+            if (item.first==subject)
             for (vector<string>::reverse_iterator i=item.second.rend(); i<item.second.rbegin(); i++) {
                 if(*i==to_string(deletedMark)){
                     i->erase(1);
@@ -61,5 +63,6 @@ void DeleteMarkToValue(Students students, string name,string subject,int deleted
 
             }
         }
+
     }
 }
