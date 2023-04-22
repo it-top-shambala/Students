@@ -24,6 +24,7 @@ void PrintSubjects(Subjects subjects) {
     for (Subject subject : subjects) {
         PrintSubject(subject);
     }
+    cout << endl;
 }
 
 void PrintStudent(Student student) {
