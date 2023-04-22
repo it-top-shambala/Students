@@ -36,4 +36,5 @@ void PrintStudents() {
     for (Student student : _students) {
         PrintStudent(student);
     }
+    cout << "--------------" << endl;
 }

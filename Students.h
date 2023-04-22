@@ -44,3 +44,16 @@ void InsertMarks(string student_name, string subject_name, Marks marks) {
         _students[student_name][subject_name].push_back(mark);
     }
 }
+void DeleteMark(string student_name, string subject_name, int index){
+    if (index >= 0 && index <  _students[student_name][subject_name].size()){
+        _students[student_name][subject_name].erase(_students[student_name][subject_name].begin() + index);
+    } else {
+        cerr << "Invalid index" << endl;
+    }
+}
+void DeleteSubject(string student_name, string subject_name) {
+    _students[student_name].erase(subject_name);
+}
+void DeleteStudent(string name) {
+    _students.erase(name);
+}

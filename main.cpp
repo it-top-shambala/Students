@@ -59,5 +59,18 @@ int main() {
 
     PrintStudents();
 
+    DeleteMark(student_name1,subject_name2,2);
+    PrintStudents();
+
+    DeleteSubject(student_name1,subject_name2);
+    PrintStudents();
+
+    DeleteStudent(student_name1);
+    PrintStudents();
+
+
+
+
+
     return 0;
 }
