@@ -2,6 +2,7 @@
 
 #include "Students.h"
 #include "ConsoleHelper.h"
+#include "FileHelper.h"
 
 int main() {
     string student_name1 = "Nikolay";
@@ -58,6 +59,7 @@ int main() {
     InsertMarks(student_name3, subject_name7, {"s", "R", "Z"});
 
     PrintStudents();
+    Export_students(_students,"ListStud.psv");
 
     DeleteMark(student_name1,subject_name2,2);
     PrintStudents();
@@ -70,6 +72,8 @@ int main() {
 */
     UpdateMark(student_name1,subject_name2,0,"!");
     PrintStudents();
+
+
 
 
     return 0;
