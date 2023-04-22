@@ -62,14 +62,14 @@ int main() {
     DeleteMark(student_name1,subject_name2,2);
     PrintStudents();
 
-    DeleteSubject(student_name1,subject_name2);
+ /*   DeleteSubject(student_name1,subject_name2);
     PrintStudents();
 
     DeleteStudent(student_name1);
     PrintStudents();
-
-
-
+*/
+    UpdateMark(student_name1,subject_name2,0,"!");
+    PrintStudents();
 
 
     return 0;

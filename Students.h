@@ -57,3 +57,10 @@ void DeleteSubject(string student_name, string subject_name) {
 void DeleteStudent(string name) {
     _students.erase(name);
 }
+void UpdateMark(string student_name, string subject_name, int index, string new_mark){
+    if (index >= 0 && index <  _students[student_name][subject_name].size()){
+        _students[student_name][subject_name][index] = new_mark;
+    } else {
+        cerr << "Invalid index" << endl;
+    }
+}
