@@ -12,7 +12,7 @@ int main() {
 
     InsertStudent(student_name1);
 
-    InsertSubject(student_name1, subject_name1);
+  InsertSubject(student_name1, subject_name1);
     InsertMark(student_name1,subject_name1,"2");
     InsertMark(student_name1,subject_name1,"3");
     InsertMark(student_name1,subject_name1,"4");
@@ -58,23 +58,74 @@ int main() {
     InsertMark(student_name3,subject_name7,"5");
     InsertMarks(student_name3, subject_name7, {"s", "R", "Z"});
 
-    PrintStudents();
-    Export_students(_students,"ListStud.psv");
+    Student Roman = pair("Roman",Subjects());
+    Roman.second["Chem"] = Marks {"L","S","D"};
+    Roman.second["Bio"] = Marks {"G","S","M"};
+    _students.insert(pair(Roman.first,Roman.second));
 
-    DeleteMark(student_name1,subject_name2,2);
-    PrintStudents();
+    char mode;
+    do{
+        cout << "0 - Show all list" << endl;
+        cout << "1 - Delete Student" << endl;
+        cout << "2 - Delete Subject" << endl;
+        cout << "3 - Delete Mark" << endl;
+        cout << "4 - Update Mark" << endl;
+        cout << "e - EXIT" << endl;
 
- /*   DeleteSubject(student_name1,subject_name2);
-    PrintStudents();
+        cin >> mode;
+        if (mode == '0'){
+            PrintStudents();
+        } else if (mode == '1'){
+            cout << "Input student name : " << endl;
+            string student_name;
+            cin >> student_name;
+            DeleteStudent(student_name);
+            cout << "-------------" ;
+            PrintStudents();
+        } else if (mode == '2'){
+            cout << "Input student name : " << endl;
+            string student_name;
+            cin >> student_name;
+            cout << "Input subject : " << endl;
+            string subject_name;
+            cin >> subject_name;
+            DeleteSubject(student_name,subject_name);
+            PrintStudents();
+        } else if (mode == '3'){
+            cout << "Input student name : " << endl;
+            string student_name;
+            cin >> student_name;
+            cout << "Input subject : " << endl;
+            string subject_name;
+            cin >> subject_name;
+            cout << "Input position of mark : " << endl;
+            int pos;
+            cin >> pos;
+            DeleteMark(student_name, subject_name,pos);
+            PrintStudents();
+        } else if (mode == '4'){
+            cout << "Input student name : " << endl;
+            string student_name;
+            cin >> student_name;
+            cout << "Input subject : " << endl;
+            string subject_name;
+            cin >> subject_name;
+            cout << "Input position of mark : " << endl;
+            int pos;
+            cin >> pos;
+            cout << "Input new mark : " << endl;
+            string new_mark;
+            cin >> new_mark;
+            UpdateMark(student_name, subject_name,pos,new_mark);
+            PrintStudents();
+        }
+    } while (mode != 'e');
 
-    DeleteStudent(student_name1);
-    PrintStudents();
-*/
-    UpdateMark(student_name1,subject_name2,0,"!");
-    PrintStudents();
 
-
-
+//vector<string> rez = ImportFromFile("ListStud.psv");
+//    for (int i = 0; i < rez.size(); ++i) {
+//        cout << rez[i] <<endl;
+//    }
 
     return 0;
 }

@@ -1,11 +1,14 @@
-Student: Igor
+Student|Igor
 		Football:  5 5 5
 		Gym:  5 s R Z
-Student: Ivan
+Student|Ivan
 		Graph:  5 5 5 4 4
 		Math:  2 3 3 4
 		Physic:  5 4 3 2 3
-Student: Nikolay
+Student|Nikolay
 		History:  4
 		Math:  2 3 4 5
 		Photo:  3 3 3 4
+Student|Roman
+		Bio:  G S M
+		Chem:  L S D

@@ -25,7 +25,7 @@ void Export_students(Students& students, string filename) {
         auto subjects = student.second;
 
         // Записываем имя студента
-        out_file << "Student: " << student_name << endl;
+        out_file << "Student" << "|" << student_name << endl;
 
         // Обходим каждый предмет
         for (auto subject : subjects) {
@@ -46,3 +46,26 @@ void Export_students(Students& students, string filename) {
     // Закрываем файл
     out_file.close();
 }
+
+vector<vector<string>> ImportFromFile(string path){
+    vector<vector<string>> result;
+    ifstream file;
+    file.open(path);
+    //   if (!file.is_open()) {
+    //      std::cerr << "Error: Failed to open file !" << endl;
+//    }
+    string  line;
+    while(getline(file,line)) {
+        int position = line.find(":");
+        if (position > 0){
+            string  marks_str = line.substr(position + 1);
+
+        }
+    }
+
+    file.close();
+    return result;
+}
+
+
+
