@@ -65,12 +65,12 @@ int main() {
 
     char mode;
     do{
-        cout << "0 - Show all list" << endl;
-        cout << "1 - Delete Student" << endl;
-        cout << "2 - Delete Subject" << endl;
-        cout << "3 - Delete Mark" << endl;
-        cout << "4 - Update Mark" << endl;
-        cout << "e - EXIT" << endl;
+        cout << "0 ------> Show all list" << endl;
+        cout << "1 ------> Delete Student" << endl;
+        cout << "2 ------> Delete Subject" << endl;
+        cout << "3 ------> Delete Mark" << endl;
+        cout << "4 ------> Update Mark" << endl;
+        cout << "any key - EXIT" << endl;
 
         cin >> mode;
         if (mode == '0'){
@@ -80,8 +80,7 @@ int main() {
             string student_name;
             cin >> student_name;
             DeleteStudent(student_name);
-            cout << "-------------" ;
-            PrintStudents();
+            cout << "-------------" << endl;
         } else if (mode == '2'){
             cout << "Input student name : " << endl;
             string student_name;
@@ -90,7 +89,6 @@ int main() {
             string subject_name;
             cin >> subject_name;
             DeleteSubject(student_name,subject_name);
-            PrintStudents();
         } else if (mode == '3'){
             cout << "Input student name : " << endl;
             string student_name;
@@ -102,7 +100,6 @@ int main() {
             int pos;
             cin >> pos;
             DeleteMark(student_name, subject_name,pos);
-            PrintStudents();
         } else if (mode == '4'){
             cout << "Input student name : " << endl;
             string student_name;
@@ -117,9 +114,8 @@ int main() {
             string new_mark;
             cin >> new_mark;
             UpdateMark(student_name, subject_name,pos,new_mark);
-            PrintStudents();
         }
-    } while (mode != 'e');
+    } while (mode == '0' || mode == '1' || mode == '2' || mode == '3' || mode == '4');
 
 
 //vector<string> rez = ImportFromFile("ListStud.psv");
