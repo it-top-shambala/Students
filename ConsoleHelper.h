@@ -5,7 +5,7 @@
 #include "Students.h"
 
 void PrintMark(Mark mark) {
-    cout << mark << ", ";
+    cout << mark << " ";
 }
 
 void PrintMarks(Marks marks) {

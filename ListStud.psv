@@ -1,14 +1,17 @@
 Student|Igor
-		Football:  5 5 5
-		Gym:  5 s R Z
+	Football|  5 5 5
+	Gym|  5 s R Z
 Student|Ivan
-		Graph:  5 5 5 4 4
-		Math:  2 3 3 4
-		Physic:  5 4 3 2 3
+	Graph|  5 5 5 4 4
+	Math|  2 3 3 4
+	Physic|  5 4 3 2 3
+Student|Nik
+	Math|  3 5 4
+	Photo|  4 5 5
 Student|Nikolay
-		History:  4
-		Math:  2 3 4 5
-		Photo:  3 3 3 4
+	History|  4
+	Math|  2 3 4 5
+	Photo|  3 3 3 4
 Student|Roman
-		Bio:  G S M
-		Chem:  L S D
+	Bio|  G S M
+	Chem|  L S D

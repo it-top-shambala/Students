@@ -63,6 +63,11 @@ int main() {
     Roman.second["Bio"] = Marks {"G","S","M"};
     _students.insert(pair(Roman.first,Roman.second));
 
+    Student Nik = pair("Nik",Subjects());
+    Nik.second["Photo"] = Marks {"4","5","5"};
+    Nik.second["Math"] = Marks {"3","5","4"};
+    _students.insert(pair(Nik.first,Nik.second));
+
     char mode;
     do{
         cout << "0 ------> Show all list" << endl;
@@ -70,6 +75,8 @@ int main() {
         cout << "2 ------> Delete Subject" << endl;
         cout << "3 ------> Delete Mark" << endl;
         cout << "4 ------> Update Mark" << endl;
+        cout << "5 ------> Export to file" << endl;
+        cout << "6 ------> Import from file" << endl;
         cout << "any key - EXIT" << endl;
 
         cin >> mode;
@@ -114,14 +121,13 @@ int main() {
             string new_mark;
             cin >> new_mark;
             UpdateMark(student_name, subject_name,pos,new_mark);
+        } else if (mode =='5'){
+            Export_students(_students,"ListStud.psv");
+        } else if (mode == '6'){
+            ImportFromFile(_students);
         }
-    } while (mode == '0' || mode == '1' || mode == '2' || mode == '3' || mode == '4');
 
-
-//vector<string> rez = ImportFromFile("ListStud.psv");
-//    for (int i = 0; i < rez.size(); ++i) {
-//        cout << rez[i] <<endl;
-//    }
+    } while (mode == '0' || mode == '1' || mode == '2' || mode == '3' || mode == '4' || mode == '5' || mode == '6');
 
     return 0;
 }
