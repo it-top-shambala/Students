@@ -5,7 +5,7 @@
 #include "Students.h"
 
 void PrintMark(Mark mark) {
-    cout << mark << ", ";
+    cout << mark << " ";
 }
 
 void PrintMarks(Marks marks) {
@@ -24,6 +24,7 @@ void PrintSubjects(Subjects subjects) {
     for (Subject subject : subjects) {
         PrintSubject(subject);
     }
+    cout << endl;
 }
 
 void PrintStudent(Student student) {
@@ -35,4 +36,5 @@ void PrintStudents() {
     for (Student student : _students) {
         PrintStudent(student);
     }
+    cout << "--------------" << endl;
 }

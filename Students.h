@@ -15,6 +15,7 @@
 #include <vector>
 #include <map>
 
+
 using namespace std;
 
 using Mark = string;
@@ -42,5 +43,38 @@ void InsertMark(string student_name, string subject_name, Mark mark) {
 void InsertMarks(string student_name, string subject_name, Marks marks) {
     for (Mark mark : marks) {
         _students[student_name][subject_name].push_back(mark);
+    }
+}
+void DeleteMark(string student_name, string subject_name, int index){
+    if (index >= 0 && index <  _students[student_name][subject_name].size()){
+        _students[student_name][subject_name].erase(_students[student_name][subject_name].begin() + index);
+    } else {
+        cerr << "Invalid index" << endl;
+    }
+}
+void DeleteSubject(string student_name, string subject_name) {
+    auto item1 = _students.find(student_name);
+            if (item1 != _students.end()){
+                auto item2 = _students[student_name].find(subject_name);
+                if (item2 != _students[student_name].end()){
+                    _students[student_name].erase(subject_name);
+                }
+            }
+            else cerr << "Invalid NAME or SUBJECT" << endl;
+}
+void DeleteStudent(string name) {
+    auto item = _students.find(name);
+    if (item != _students.end()) {
+        _students.erase(name);
+    } else {
+        cerr << "Invalid NAME!" << endl;
+    }
+
+}
+void UpdateMark(string student_name, string subject_name, int index, string new_mark){
+    if (index >= 0 && index <  _students[student_name][subject_name].size()){
+        _students[student_name][subject_name][index] = new_mark;
+    } else {
+        cerr << "Invalid index" << endl;
     }
 }
