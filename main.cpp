@@ -30,7 +30,8 @@ int main() {
     int choice;
     string name, subject, mark, old_mark, new_mark, filename;
 
-    while (true) {
+    int input = -1;
+    while (input != 0) {
         ShowMenu();
         cout << "Укажите пункт меню: ";
         cin >> choice;
@@ -99,8 +100,12 @@ int main() {
                 cin >> filename;
                 ImportData(filename);
                 break;
-            case 10:
+            case 0:
                 cout << "Выход";
+                input = 0;
+                break;
+            default:
+                cout << "Нет такого пункта меню!";
                 break;
 
         }
