@@ -96,7 +96,7 @@ int main() {
                 ExportData(filename);
                 break;
             case 9:
-                cout << "Введите название файла для экспорта данный: ";
+                cout << "Введите название файла для импорта данный: ";
                 cin >> filename;
                 ImportData(filename);
                 break;
