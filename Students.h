@@ -1,19 +1,11 @@
-/*
- * Студент 1:
- *      Предмет 1: 5,5,4,1
- *      Предмет 2: 5,5,4,1
- *      Предмет 3: 5,5,4,1
-* Студент 2:
- *      Предмет 1: 5,5,4,1
- *      Предмет 6: 5,5,4,1
- *      Предмет 3: 5,5,4,1
- */
-
 #pragma once
 
 #include <string>
 #include <vector>
 #include <map>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -32,15 +24,81 @@ void InsertStudent(string name) {
     Subjects temp;
     _students.insert(Student(name, temp));
 }
+
+void RemoveStudent(string name) {
+    _students.erase(name);
+}
+
 void InsertSubject(string student_name, string subject_name) {
     Marks temp;
     _students[student_name].insert(Subject(subject_name, temp));
 }
+
+void RemoveSubject(string student_name, string subject_name) {
+    _students[student_name].erase(subject_name);
+}
+
 void InsertMark(string student_name, string subject_name, Mark mark) {
     _students[student_name][subject_name].push_back(mark);
 }
+
+void RemoveMark(string student_name, string subject_name, Mark mark) {
+    auto& marks = _students[student_name][subject_name];
+    marks.erase(remove(marks.begin(), marks.end(), mark), marks.end());
+}
+
 void InsertMarks(string student_name, string subject_name, Marks marks) {
     for (Mark mark : marks) {
         _students[student_name][subject_name].push_back(mark);
     }
+}
+
+void UpdateMark(string student_name, string subject_name, Mark old_mark, Mark new_mark) {
+    auto& marks = _students[student_name][subject_name];
+    replace(marks.begin(), marks.end(), old_mark, new_mark);
+}
+
+void ExportData(string filename) {
+    ofstream outfile(filename);
+    for (auto& student : _students) {
+        outfile << student.first << endl;
+        for (auto& subject : student.second) {
+            outfile << subject.first << endl;
+            for (auto& mark : subject.second) {
+                outfile << mark << ",";
+            }
+            outfile << endl;
+        }
+        outfile << endl;
+    }
+    outfile.close();
+    cout << "Данные экспортированы в файл " << filename << endl;
+}
+
+void ImportData(string filename) {
+    ifstream infile(filename);
+    string line;
+    string student_name;
+    string subject_name;
+    Mark mark;
+
+    while (getline(infile, line)) {
+        if (line.empty()) {
+            continue;
+        }
+        if (line.back() == ':') {
+            student_name = line.substr(0, line.size() - 1);
+            InsertStudent(student_name);
+        } else if (isalpha(line[0])) {
+            subject_name = line;
+            InsertSubject(student_name, subject_name);
+        } else {
+            stringstream ss(line);
+            while (getline(ss, mark, ',')) {
+                InsertMark(student_name, subject_name, mark);
+            }
+        }
+    }
+    infile.close();
+    cout << "Данные импортированы из файла " << filename << endl;
 }
