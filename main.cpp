@@ -4,6 +4,7 @@
 #include "ConsoleHelper.h"
 
 int main() {
+    system("chcp 65001");
     string student_name = "Andrey";
     string subject_name_1 = "SoftDev";
     string subject_name_2 = "Photo";

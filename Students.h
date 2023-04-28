@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -44,7 +45,9 @@ void InsertMark(string student_name, string subject_name, Mark mark) {
 
 void RemoveMark(string student_name, string subject_name, Mark mark) {
     auto& marks = _students[student_name][subject_name];
-    marks.erase(remove(marks.begin(), marks.end(), mark), marks.end());
+    auto mark_it = remove(marks.begin(), marks.end(), mark);
+    marks.erase(mark_it, marks.end());
+//    marks.erase(remove(marks.begin(), marks.end(), mark), marks.end());
 }
 
 void InsertMarks(string student_name, string subject_name, Marks marks) {
