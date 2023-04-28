@@ -91,12 +91,12 @@ int main() {
                 UpdateMark(name, subject, old_mark, new_mark);
                 break;
             case 8:
-                cout << "Введите название файла для экспорта данный: ";
+                cout << "Введите название файла для экспорта данных: ";
                 cin >> filename;
                 ExportData(filename);
                 break;
             case 9:
-                cout << "Введите название файла для импорта данный: ";
+                cout << "Введите название файла для импорта данных: ";
                 cin >> filename;
                 ImportData(filename);
                 break;
