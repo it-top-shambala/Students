@@ -5,24 +5,6 @@
 
 using namespace std;
 
-/*void ExportData(string filename) {
-    ofstream outfile(filename);
-    for (auto& student : _students) {
-        outfile << student.first << endl;
-        for (auto& subject : student.second) {
-            outfile << subject.first << endl;
-            for (auto& mark : subject.second) {
-                outfile << mark << ",";
-            }
-            outfile << endl;
-        }
-        outfile << endl;
-    }
-    outfile.close();
-    cout << "Данные экспортированы в файл " << filename << endl;
-}
-*/
-
 void WriteSubjectData(const Subject& subject, ofstream& outfile) {
     outfile << subject.first;
 
