@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void ExportData(string filename) {
+/*void ExportData(string filename) {
     ofstream outfile(filename);
     for (auto& student : _students) {
         outfile << student.first << endl;
@@ -18,6 +18,38 @@ void ExportData(string filename) {
         }
         outfile << endl;
     }
+    outfile.close();
+    cout << "Данные экспортированы в файл " << filename << endl;
+}
+*/
+
+void WriteSubjectData(const Subject& subject, ofstream& outfile) {
+    outfile << subject.first;
+
+    for (auto& mark : subject.second) {
+        outfile << mark << ",";
+    }
+
+    outfile << endl;
+}
+
+void WriteStudentData(const Student& student, ofstream& outfile) {
+    outfile << student.first;
+
+    for (auto& subject : student.second) {
+        WriteSubjectData(subject, outfile);
+    }
+
+    outfile << endl;
+}
+
+void ExportData(string filename) {
+    ofstream outfile(filename);
+
+    for (auto& student : _students) {
+        WriteStudentData(student, outfile);
+    }
+
     outfile.close();
     cout << "Данные экспортированы в файл " << filename << endl;
 }
