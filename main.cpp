@@ -5,11 +5,7 @@
 #include "insert.h"
 #include "delete.h"
 #include "update.h"
-#include <string>
-#include <vector>
-#include <map>
-#include <iostream>
-#include <fstream>
+
 using namespace std;
 
 int main() {
