@@ -1,16 +1,11 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <map>
-#include <fstream>
-#include <sstream>
+ï»¿#include <iostream>
+#include "Update.h"
+#include "Impexp.h"
 #include "Students.h"
-#include "FunkcionalMenu.h"
-
+#include "ConsoleHelper.h"
+#include "Remove.h"
 using namespace std;
-                  
 int main() {
-    setlocale(LC_ALL, "Rus");
     int choice;
     do {
         cout << "Menu:\n";
@@ -32,14 +27,12 @@ int main() {
         }
               //Export from file to file
         case 2: {
-            LoadDataFromFile("C:/data.txt");
             ExportDataToFile("temp.txt");
             PrintStudents();
             break;
         }
               //Remove Student
         case 3: {
-            LoadDataFromFile("C:/data.txt");
             string student_name;
             cout << "Enter the name of the student to remove: ";
             cin >> student_name;
@@ -49,7 +42,6 @@ int main() {
         }
               //Remove a subject
         case 4: {
-            LoadDataFromFile("C:/data.txt");
             string student_name, subject_name;
             cout << "Enter the name of the student: ";
             cin >> student_name;
@@ -61,7 +53,6 @@ int main() {
         }
               // Remove a mark
         case 5: {
-            LoadDataFromFile("C:/data.txt");
             RemoveMark("Andrey", "DB", "-1");
             PrintStudents();
             break;
@@ -94,8 +85,3 @@ int main() {
     } while (choice != 7);
     return 0;
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privac
