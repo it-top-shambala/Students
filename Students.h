@@ -1,16 +1,5 @@
-/*
- * Студент 1:
- *      Предмет 1: 5,5,4,1
- *      Предмет 2: 5,5,4,1
- *      Предмет 3: 5,5,4,1
-* Студент 2:
- *      Предмет 1: 5,5,4,1
- *      Предмет 6: 5,5,4,1
- *      Предмет 3: 5,5,4,1
- */
-
 #pragma once
-
+#include <iostream>
 #include <string>
 #include <vector>
 #include <map>
@@ -27,6 +16,9 @@ using Students = map<string, Subjects>;
 using Student = pair<string, Subjects>;
 
 Students _students;
+
+
+
 
 void InsertStudent(string name) {
     Subjects temp;
